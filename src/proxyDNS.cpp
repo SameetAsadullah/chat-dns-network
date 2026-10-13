@@ -66,7 +66,7 @@ int main()
 	saddr.sin_port=htons(9000);
 	saddr.sin_addr.s_addr=inet_addr("127.0.0.1");
 
-	int res=bind(sockfd,(struct sockaddr*)&saddr,sizeof(saddr));
+	int res=::bind(sockfd,(struct sockaddr*)&saddr,sizeof(saddr));
 	assert(res!=-1);
 	
 	//Create listening queue
@@ -211,7 +211,7 @@ int main()
 								msg[res] = '\0';
 								
 								if (buff[0] == '1') {	//if new client has connected with any server
-									int clientPort, serverPort;
+									int clientPort, serverPort = 0;
 
 									//tokenizing and storing the message
 									char *token = strtok(buff, "|");

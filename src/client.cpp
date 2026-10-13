@@ -19,7 +19,7 @@ void stringToChar(string buff, char *&temp) {	//converting string into char*
 
 int main()
 {
-	int portNumber, myPort = 0;
+	int portNumber = 0, myPort = 0;
 	int number = -1;
 	bool check = true, getClients = true, check1 = true, check2 = false;
 
@@ -45,7 +45,7 @@ int main()
 	assert(res != -1);
 
 	//displaying menu and getting IP of website
-	int menu;
+	int menu = 0;
 	cout << endl << "1) Communication with client." << endl << "2) Get IP of a website." << endl;
 	while (menu != 1 && menu != 2) {
 		cout << "What type of connection do you want?(1/2) ";
@@ -54,7 +54,7 @@ int main()
 		if (menu == 2) {	//getting IP
 			string msgS;
 			char *msgC;
-			int siteNo;
+			int siteNo = 0;
 			vector<char*> path;
 
 			while (siteNo != 1 && siteNo != 2 && siteNo != 3 && siteNo != 4 && siteNo != 5) {	//asking available websites
@@ -232,7 +232,7 @@ int main()
 
 		//closing connection
 		if(copy_msg == "close" || strcmp(buff, "close") == 0 || strcmp(buff, "Connection unavailable") == 0) {
-			char option;
+			char option = '\0';
 
 			while(option != 'n' && option != 'N' && option != 'y' && option != 'Y') {
 				cout << endl << "Do you want to communicate with any other client?(y/n) ";

@@ -176,7 +176,7 @@ int main()
 	saddr.sin_addr.s_addr=inet_addr("127.0.0.1");
 	for (int i = 0; (i < 2) && (res == -1); ++i) {
 		saddr.sin_port=htons(ports[i]);
-		res=bind(sockfd,(struct sockaddr*)&saddr,sizeof(saddr));
+		res=::bind(sockfd,(struct sockaddr*)&saddr,sizeof(saddr));
 		if (res != -1) {
 			cout << "\t\t\tSERVER ON PORT " << ports[i] << " IS UP NOW" << endl << endl;
 			portNumber = ports[i];
@@ -305,7 +305,7 @@ int main()
 						buff[res] = '\0';
 						if(res<=0)
 						{
-							int clientPort;
+							int clientPort = 0;
 							//deleting client information of this server
 							for (int j = 0; j < clients.size(); ++j) {
 								if (clients[j].fd == fds[i]) {
@@ -431,7 +431,7 @@ int main()
 										}
 
 										else {
-											int clientPort;
+											int clientPort = 0;
 											for (int j = 0; j < clients.size(); ++j) {
 												if (clients[j].fd == fds[i]) {
 													clientPort = clients[j].clientPort;		

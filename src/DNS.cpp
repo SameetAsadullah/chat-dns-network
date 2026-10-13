@@ -59,7 +59,7 @@ int main()
 	saddr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
 	int client_count = 0;
-	int res = bind(sockfd,(struct sockaddr*)&saddr,sizeof(saddr));
+	int res = ::bind(sockfd,(struct sockaddr*)&saddr,sizeof(saddr));
 	assert(res!=-1);
 	
 	// Create listening queue
