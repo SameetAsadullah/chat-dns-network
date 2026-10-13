@@ -22,4 +22,4 @@ The default topology uses loopback networking and these ports:
 | Chat servers | 6000, 7000, 8000 |
 | Proxy DNS | 9000 |
 
-The implementation demonstrates TCP sockets, `bind`/`listen`/`accept`, `select`-based multiplexing, POSIX threads, routing tables, and a simple application-level message protocol.
+The implementation combines TCP sockets, `bind`/`listen`/`accept`, `select`-based multiplexing, POSIX threads, routing tables, and a compact application-level message protocol.

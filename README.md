@@ -16,7 +16,7 @@ A C++ socket-programming project that models a complete local TCP network: multi
 - Handle multiple connections with `select` and POSIX threads.
 - Run the full topology locally over loopback networking.
 
-See [Network architecture](docs/ARCHITECTURE.md) for component responsibilities, ports, and data flow. The original assignment is retained in [Project Statement.pdf](Project%20Statement.pdf).
+See [Network architecture](docs/ARCHITECTURE.md) for component responsibilities, ports, and data flow. The original system specification is available in [Project Statement.pdf](Project%20Statement.pdf).
 
 ## Build
 
@@ -55,7 +55,7 @@ Start additional `server` or `client` processes as needed. The interactive serve
 
 ## Project status
 
-This repository preserves the original computer-networks project. The protocol and application code remain intact; repository improvements provide reproducible builds, clearer topology documentation, and automated compilation checks.
+The protocol and application code remain intact, with repository maintenance focused on reproducible builds, topology documentation, and automated compilation checks.
 
 ## License
 
