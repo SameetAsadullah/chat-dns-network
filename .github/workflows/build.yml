@@ -1,0 +1,24 @@
+name: C++ build
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Compile every network component
+        run: make
+
+      - name: Verify expected executables
+        run: test -x build/dns && test -x build/proxy-dns && test -x build/server-dns && test -x build/server && test -x build/client
+
+      - name: Check whitespace
+        run: git diff --check

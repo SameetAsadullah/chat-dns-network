@@ -1,67 +1,62 @@
-#<h1 align="center">Complete Network Socket Programming</h1>
+# Multi-Server Chat and DNS Network
 
-### Description
-A program coded in `C++ language` using socket programming to illustrate complete network of `Chatting` or `Getting Ip Addresses` on internet using `DNS and Proxy-DNS Servers`. Full description of the project can be viewed [Here](https://github.com/SameetAsadullah/Complete-Network-Socket-Programming/blob/main/Project%20Statement.pdf).
+A C++ socket-programming project that models a complete local TCP network: multiple chat servers, clients, a proxy DNS service, a server-aware DNS layer, and an authoritative domain lookup service.
 
-### Topology
-<div align="center">
-  <img src = "https://github.com/SameetAsadullah/Complete-Network-Socket-Programming/blob/main/extras/topology-ss.png" alt = "" width="700px"/>
-</div>
+![C++](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)
+![Networking](https://img.shields.io/badge/networking-TCP%20Sockets-2563EB)
+![Build](https://github.com/SameetAsadullah/DNS-Server-Socket-Programming/actions/workflows/build.yml/badge.svg)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-### Manual
-1) Use following commands `In Order` to `Compile and Run ProxyDNS Server`:
-    ```
-    g++ proxyDNS.cpp
-    ```
-    ```
-    ./a.out
-    ```
+## Features
 
-2) Use following commands `In Order` to `Compile and Run DNS Server`:
-    ```
-    g++ DNS.cpp
-    ```
-    ```
-    ./a.out
-    ```
-    
-3) Use following commands `In Order` to `Compile and Run server-dns`:
-    ```
-    g++ -pthread server-dns.cpp
-    ```
-    ```
-    ./a.out
-    ```
-    
-4) Use following commands `In Order` to `Compile and Run First Server`:
-    ```
-    g++ -pthread server.cpp
-    ```
-    ```
-    ./a.out
-    ```
+- Connect clients to any of three chat servers.
+- Exchange messages between connected clients.
+- Resolve a predefined set of domain names through layered DNS services.
+- Maintain client/server routing information in the proxy layer.
+- Handle multiple connections with `select` and POSIX threads.
+- Run the full topology locally over loopback networking.
 
-5) Use following commands `In Order` to `Compile and Run Second Server`:
-    ```
-    g++ -pthread server.cpp
-    ```
-    ```
-    ./a.out
-    ```
-6) Use following commands `In Order` to `Compile and Run Clients`:
-    ```
-    g++ client.cpp
-    ```
-    ```
-    ./a.out
-    ```
-7) You can change IPs in the file named as `IPs.txt`
+See [Network architecture](docs/ARCHITECTURE.md) for component responsibilities, ports, and data flow. The original assignment is retained in [Project Statement.pdf](Project%20Statement.pdf).
 
-### Working Screenshots
-<div align="center">
-  <img src = "https://github.com/SameetAsadullah/Complete-Network-Socket-Programming/blob/main/extras/getting-ip-ss.png" alt = "" width="900px"/>
-</div>
-<br/>
-<div align="center">
-  <img src = "https://github.com/SameetAsadullah/Complete-Network-Socket-Programming/blob/main/extras/chatting-ss.png" alt = "" width="900px"/>
-</div>
+## Build
+
+The programs use POSIX sockets and should be built on Linux or another Unix-like system.
+
+```bash
+make
+```
+
+This creates five executables in `build` and copies `IPs.txt` beside them.
+
+## Run the topology
+
+Open separate terminals, change into `build` in each, and start the components in this order:
+
+```bash
+./dns
+./proxy-dns
+./server-dns
+./server
+./server
+./client
+```
+
+Start additional `server` or `client` processes as needed. The interactive server prompt assigns ports from the configured 6000, 7000, and 8000 range. Default DNS and proxy services use ports 5000 and 9000.
+
+`src/IPs.txt` contains the demonstration domain mappings. These are simulated values used by the project rather than live DNS records.
+
+## Screenshots
+
+| Network topology | Domain lookup |
+| --- | --- |
+| ![Network topology](extras/topology-ss.png) | ![Domain lookup through DNS](extras/getting-ip-ss.png) |
+
+![Chatting between network clients](extras/chatting-ss.png)
+
+## Project status
+
+This repository preserves the original computer-networks project. The protocol and application code remain intact; repository improvements provide reproducible builds, clearer topology documentation, and automated compilation checks.
+
+## License
+
+Licensed under the [MIT License](LICENSE).
