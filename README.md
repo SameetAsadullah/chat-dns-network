@@ -43,7 +43,7 @@ Open separate terminals, change into `build` in each, and start the components i
 
 Start additional `server` or `client` processes as needed. The interactive server prompt assigns ports from the configured 6000, 7000, and 8000 range. Default DNS and proxy services use ports 5000 and 9000.
 
-`src/IPs.txt` contains the demonstration domain mappings. These are simulated values used by the project rather than live DNS records.
+`src/IPs.txt` contains the configured domain mappings. These are static values used by the network rather than live DNS records.
 
 ## Screenshots
 
