@@ -12,7 +12,7 @@ clients ⇄ chat servers ⇄ proxy DNS ⇄ server-aware DNS ⇄ authoritative DN
 - **Server** accepts client connections, coordinates chat traffic, and communicates its routing information upstream.
 - **Proxy DNS** maintains the association between clients and servers and forwards lookup traffic.
 - **Server-aware DNS** combines server routing with DNS request handling.
-- **Authoritative DNS** resolves the domains listed in `IPs.txt`.
+- **Authoritative DNS** resolves the domains listed in `data/domains.txt`.
 
 The default topology uses loopback networking and these ports:
 

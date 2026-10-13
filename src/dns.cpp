@@ -39,7 +39,7 @@ struct domain_against_IP {
 int main()
 {
 	vector <domain_against_IP> vec_name_IP;
-	fstream IP_file("IPs.txt", ios::in);
+	fstream IP_file("domains.txt", ios::in);
 	if (IP_file.is_open()) {
 		while(!IP_file.eof()) {
 			domain_against_IP obj_name_IP;

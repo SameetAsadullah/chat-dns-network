@@ -16,7 +16,7 @@ A C++ socket-programming project that models a complete local TCP network: multi
 - Handle multiple connections with `select` and POSIX threads.
 - Run the full topology locally over loopback networking.
 
-See [Network architecture](docs/ARCHITECTURE.md) for component responsibilities, ports, and data flow. The original system specification is available in [Project Statement.pdf](Project%20Statement.pdf).
+See [Network architecture](docs/ARCHITECTURE.md) for component responsibilities, ports, and data flow. The original system specification is available in [docs/system-specification.pdf](docs/system-specification.pdf).
 
 ## Build
 
@@ -26,7 +26,7 @@ The programs use POSIX sockets and should be built on Linux or another Unix-like
 make
 ```
 
-This creates five executables in `build` and copies `IPs.txt` beside them.
+This creates five executables in `build` and copies `data/domains.txt` beside them.
 
 ## Run the topology
 
@@ -43,7 +43,7 @@ Open separate terminals, change into `build` in each, and start the components i
 
 Start additional `server` or `client` processes as needed. The interactive server prompt assigns ports from the configured 6000, 7000, and 8000 range. Default DNS and proxy services use ports 5000 and 9000.
 
-`src/IPs.txt` contains the configured domain mappings. These are static values used by the network rather than live DNS records.
+`data/domains.txt` contains the configured domain mappings. These are static values used by the network rather than live DNS records.
 
 ## Screenshots
 
