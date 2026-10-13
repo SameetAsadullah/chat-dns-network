@@ -4,7 +4,7 @@ A C++ socket-programming project that models a complete local TCP network: multi
 
 ![C++](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)
 ![Networking](https://img.shields.io/badge/networking-TCP%20Sockets-2563EB)
-![Build](https://github.com/SameetAsadullah/DNS-Server-Socket-Programming/actions/workflows/build.yml/badge.svg)
+![Build](https://github.com/SameetAsadullah/chat-dns-network/actions/workflows/build.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 ## Features
