@@ -1,10 +1,10 @@
-# Multi-Server Chat and DNS Network
+# Chat Relay
 
 A C++ socket-programming project that models a complete local TCP network: multiple chat servers, clients, a proxy DNS service, a server-aware DNS layer, and an authoritative domain lookup service.
 
 ![C++](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus&logoColor=white)
 ![Networking](https://img.shields.io/badge/networking-TCP%20Sockets-2563EB)
-![Build](https://github.com/SameetAsadullah/chat-dns-network/actions/workflows/build.yml/badge.svg)
+![Build](https://github.com/SameetAsadullah/chat-relay/actions/workflows/build.yml/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 ## Features
@@ -16,7 +16,7 @@ A C++ socket-programming project that models a complete local TCP network: multi
 - Handle multiple connections with `select` and POSIX threads.
 - Run the full topology locally over loopback networking.
 
-See [Network architecture](docs/ARCHITECTURE.md) for component responsibilities, ports, and data flow. The original system specification is available in [docs/system-specification.pdf](docs/system-specification.pdf).
+See [Network architecture](docs/ARCHITECTURE.md) for component responsibilities, ports, and data flow. The system specification is available in [docs/system-specification.pdf](docs/system-specification.pdf).
 
 ## Build
 
@@ -55,7 +55,7 @@ Start additional `server` or `client` processes as needed. The interactive serve
 
 ## Project status
 
-The protocol and application code remain intact, with repository maintenance focused on reproducible builds, topology documentation, and automated compilation checks.
+The protocol and application code are supported by reproducible builds, topology documentation, and automated compilation checks.
 
 ## License
 
